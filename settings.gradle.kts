@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Meteorology"
 include(":app")
- 
+include(":common")
