@@ -17,3 +17,4 @@ rootProject.name = "Meteorology"
 include(":app")
 include(":common")
 include(":domain")
+include(":data")
