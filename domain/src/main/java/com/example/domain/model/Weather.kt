@@ -1,7 +1,7 @@
 package com.example.domain.model
 
 data class Weather(
-    val weatherObject: WeatherObject,
+    val weatherObject: List<WeatherObject>,
     val main: WeatherMainItem,
     val visibility: Float,
     val windData: WindData,

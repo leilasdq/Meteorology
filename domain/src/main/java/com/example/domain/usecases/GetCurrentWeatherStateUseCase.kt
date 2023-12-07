@@ -4,5 +4,14 @@ class GetCurrentWeatherStateUseCase(
     private val repo: GetWeatherRepository
 ) {
 
-    operator fun invoke() = repo.getCurrentWeather()
+    data class GetCurrentWeatherStateUseCaseArgs(
+        val lat: Float,
+        val lon: Float,
+        val appid: String,
+        val lang: String = "fa",
+    )
+
+    operator fun invoke(args: GetCurrentWeatherStateUseCaseArgs) = with(args) {
+        repo.getCurrentWeather(lat, lon, appid, lang)
+    }
 }

@@ -1,6 +1,8 @@
-package com.example.data.remote.di
+package com.example.data.di
 
 import com.example.data.remote.service.GetWeatherService
+import com.example.data.repository.weather.WeatherRepositoryImpl
+import com.example.domain.usecases.GetWeatherRepository
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -35,5 +37,9 @@ val dataModule = module {
 
     single {
         (get<Retrofit>()).create(GetWeatherService::class.java)
+    }
+
+    single<GetWeatherRepository> {
+        WeatherRepositoryImpl(get())
     }
 }

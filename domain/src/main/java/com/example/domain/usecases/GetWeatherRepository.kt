@@ -6,5 +6,10 @@ import kotlinx.coroutines.flow.Flow
 
 interface GetWeatherRepository {
 
-    fun getCurrentWeather(): Flow<GetResult<Weather>>
+    fun getCurrentWeather(
+        lat: Float,
+        lon: Float,
+        appid: String,
+        lang: String = "fa",
+    ): Flow<GetResult<Weather>>
 }
